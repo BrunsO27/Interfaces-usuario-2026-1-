@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./colores.css">
+        <link rel="stylesheet" href="./estilos.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Asimovian&family=Michroma&display=swap"
+            rel="stylesheet">
+        <title>Formulario</title>
+    </head>
+    <body>
+        <header class="Encabezado">
+            <img
+                src="https://cdn.freebiesupply.com/images/large/2x/pokemon-logo-black-transparent.png"
+                alt="Logo de Pokémon">
+            <h1>Formulario de Ingreso Pokémon</h1>
+            <p>Responde las siguientes preguntas para convertirte en
+                entrenador</p>
+        </header>
+
+        <hr class="lineaDivisora" />
+
+        <main>
+            <section id="form" class="Contenedor">
+                <!-- Datos personales -->
+                <form id="data">
+                    <h2>Información Personal</h2>
+                    <fieldset>
+                        <legend>Llena la siguiente información:</legend>
+
+                        <label for="name">Nombre Completo:</label>
+                        <input name="Nombre Completo" id="name" type="text"
+                            size="30"
+                            placeholder="Escribe tu nombre completo" />
+
+                        <label for="birth">Fecha de Nacimiento:</label>
+                        <input type="date" name="Fecha de Nacimiento"
+                            id="birth" />
+
+                        <label for="apodo">Apodo:</label>
+                        <input name="Apodo" id="apodo" type="text"
+                            placeholder="Escribe tu apodo" />
+
+                        <label for="mail">Correo Electrónico:</label>
+                        <input type="email" name="Correo Electrónico" id="mail"
+                            size="30"
+                            placeholder="Escribe tu correo electrónico" />
+
+                        <label for="phone">Número Telefónico:</label>
+                        <input type="tel" name="Número Telefónico" id="phone"
+                            maxlength="10"
+                            size="25"
+                            placeholder="Escribe tu número de teléfono" />
+                    </fieldset>
+                </form>
+
+                <!-- Perfil Pokémon -->
+                <form id="pokemon" class="Formulario">
+                    <h2>Perfil de entrenador Pokémon</h2>
+                    <fieldset>
+                        <legend>Responde las siguientes preguntas:</legend>
+
+                        <!-- Preferencias básicas -->
+                        <label for="game">Juego favorito:</label>
+                        <select name="Juego favorito" id="game">
+                            <option value> Selecciona Juego</option>
+                        </select>
+
+                        <label for="region">Región favorita:</label>
+                        <select name="Región" id="region">
+                            <option value> Selecciona Region</option>
+                        </select>
+
+                        <label for="type">Tipo favorito:</label>
+                        <select name="Tipo favorito" id="type">
+                            <option value> Selecciona Tipo</option>
+                        </select>
+
+                        <label for="rival">Rival favorito:</label>
+                        <select name="Rival favorito" id="rival">
+                            <option value> Selecciona Rival </option>
+                        </select>
+
+                        <label for="mote">¿Qué mote le pondrías a tu
+                            compañero Pokemon?</label>
+                        <input type="text" name="¿Qué mote le pondrías a tu
+                            compañero?" id="mote"
+                            placeholder="Escribe el mote" />
+
+                        <hr />
+
+                        <!-- Estilo de entrenador -->
+                        <div class="preguntasEntrenador">
+                            <label for="rol">¿Cuál es tu rol como
+                                entrenador?</label>
+                            <select name="¿Cuál es tu rol como
+                            entrenador?" id="rol">
+                                <option value> Selecciona Rol</option>
+                            </select>
+
+                            <label for="team">¿A qué equipo te unirías?</label>
+                            <select name="¿A qué equipo te unirías?" id="team">
+                                <option value> Seleeciona Equipo </option>
+                            </select>
+
+                            <label>¿Qué prefieres hacer con tus Pokémon?</label>
+                            <div id="treatment">
+                                <div><input type="radio"
+                                        name="¿Qué prefieres hacer con tus Pokémon?"
+                                        value="cuidar"> Cuidar</div>
+                                <div><input type="radio"
+                                        name="¿Qué prefieres hacer con tus Pokémon?"
+                                        value="entrenar"> Entrenar</div>
+                            </div>
+
+                            <label>¿Intercambias tus Pokémon?</label>
+                            <div id="exchange">
+                                <div><input type="radio"
+                                        name="¿Intercambias tus Pokémon?"
+                                        value="si"> Sí</div>
+                                <div><input type="radio"
+                                        name="¿Intercambias tus Pokémon?"
+                                        value="no"> No</div>
+                            </div>
+
+                            <label>¿Participas en combates?</label>
+                            <div id="duel">
+                                <div><input type="radio"
+                                        name="¿Participas en combates?"
+                                        value="si"> Sí</div>
+                                <div><input type="radio"
+                                        name="¿Participas en combates?"
+                                        value="no"> No</div>
+                                <div><input type="radio"
+                                        name="¿Participas en combates?"
+                                        value="depende"> Depende</div>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </form>
+            </section>
+
+            <hr class="lineaDivisora">
+
+            <section class="ContenedorBoton">
+                <button name="save" id="save" class="boton"> Guardar </button>
+            </section>
+        </main>
+
+        <hr class="lineaDivisora">
+
+        <footer class="Footer">
+            <p> Diseño de Interfaces de Usuario </p>
+            <p> Tarea 02 | JavaScript </p>
+            <p> Ortiz Amaya Bruno Fernando </p>
+            <p> Facultad de Ciencias </p>
+            <p> Universidad Nacional Autónoma de México </p>
+        </footer>
+
+        <script src="script.js"></script>
+    </body>
+</html>
