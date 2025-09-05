@@ -1,0 +1,66 @@
+:root {
+    /* === Tipos Pokémon === */
+    --color-acero: #b7b7ce;
+    --color-acero-sec: #d1d1e0;
+
+    --color-agua: #6390f0;
+    --color-agua-sec: #98b9f2;
+
+    --color-bicho: #a6b91a;
+    --color-bicho-sec: #c6d34a;
+
+    --color-dragon: #6f35fc;
+    --color-dragon-sec: #9c6cfa;
+
+    --color-electrico: #f7d02c;
+    --color-electrico-sec: #fae275;
+
+    --color-fantasma: #735797;
+    --color-fantasma-sec: #9b84c5;
+
+    --color-fuego: #ee8130;
+    --color-fuego-sec: #f5a463;
+
+    --color-hada: #d685ad;
+    --color-hada-sec: #f1b7d6;
+
+    --color-hielo: #96d9d6;
+    --color-hielo-sec: #c9f0f0;
+
+    --color-lucha: #c22e28;
+    --color-lucha-sec: #e05b52;
+
+    --color-normal: #a8a77a;
+    --color-normal-sec: #c9c8a2;
+
+    --color-planta: #7ac74c;
+    --color-planta-sec: #a9dc8e;
+
+    --color-psiquico: #f95587;
+    --color-psiquico-sec: #fa87a7;
+
+    --color-roca: #b6a136;
+    --color-roca-sec: #d6c064;
+
+    --color-siniestro: #705746;
+    --color-siniestro-sec: #9a7a65;
+
+    --color-tierra: #e2bf65;
+    --color-tierra-sec: #f0d99d;
+
+    --color-veneno: #a33ea1;
+    --color-veneno-sec: #c270c6;
+
+    --color-volador: #a98ff3;
+    --color-volador-sec: #c6b5f8;
+
+    --color-stellar: #5b2ca5;      /* color principal: violeta oscuro / espacial */
+    --color-stellar-sec: #9b59b6;
+
+    /* === Colores principales de la página === */
+    --color-1: #c10c1b;
+    --color-2: #000000;
+    --color-3: #ffffff;
+    --color-4: #6c757d;
+    --color-5: #ddddde;
+}

@@ -1,0 +1,161 @@
+/* =========================================
+   RESET BÁSICO
+   ========================================= */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--color-3);
+}
+
+
+/* =========================================
+   HEADER
+   ========================================= */
+.Encabezado {
+  background-color: var(--color-1);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 40px;
+  min-height: 200px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.Encabezado img {
+  width: 350px;
+  height: auto;
+}
+
+.Encabezado h1,
+.Encabezado p {
+  grid-column: 2;
+  justify-self: end;
+  text-align: right;
+  margin: 0;
+  color: var(--color-5);
+}
+
+.Encabezado h1 {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  font-family: "Michroma", sans-serif;
+}
+
+.Encabezado p {
+  font-size: 2rem;
+  font-family: "Asimovian", sans-serif;
+}
+
+
+/* =========================================
+   DIVISORES
+   ========================================= */
+.lineaDivisora {
+  margin: 0;
+}
+
+hr {
+  height: 5px;
+  border: none;
+  background-color: var(--color-2);
+}
+
+
+/* =========================================
+   MAIN
+   ========================================= */
+main {
+  background-color: var(--color-3);
+  margin: 0;
+  padding: 0;
+}
+
+.Contenedor {
+  margin: 0;
+  padding: 20px;
+  background-color: var(--color-4);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.Contenedor hr {
+  margin: 15px;
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+.Footer {
+  background-color: var(--color-1);
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+
+/* =========================================
+   TIPOGRAFÍA GENERAL
+   ========================================= */
+h2 {
+  font-size: 35px;
+  font-family: "Michroma", sans-serif;
+}
+
+fieldset {
+  font-size: 20px;
+  text-align: left;
+}
+
+legend {
+  font-size: 30px;
+  font-family: "Asimovian", sans-serif;
+}
+
+label {
+  font-family: "Tektur", sans-serif;
+}
+
+.ContenedorBoton {
+  display: grid;
+  place-items: center;
+}
+
+.boton {
+  display: grid;
+  margin: 20px;
+  background-color: var(--color-5);
+  align-items: center;
+  width: 120px;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  padding: 16px 32px; 
+  font-size: 1.2rem;
+  justify-content: center;
+}
+
+.boton:hover {
+  color: white;
+  background-color: var(--color-boton-hover);
+  cursor: pointer;
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   FORMULARIOS / PREGUNTAS
+   ========================================= */
+.preguntasEntrenador {
+  display: grid;
+  gap: 15px;
+}
+
+.preguntasEntrenador select {
+  width: 190px;
+}
