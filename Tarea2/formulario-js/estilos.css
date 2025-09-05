@@ -1,18 +1,20 @@
 /* =========================================
    RESET BÁSICO
    ========================================= */
+/* Eliminamos márgenes y padding por defecto, y establecemos color base */
 html,
 body {
   margin: 0;
   padding: 0;
   color: var(--color-3);
+  font-family: "Tektur", sans-serif;
 }
-
 
 /* =========================================
    HEADER
    ========================================= */
 .Encabezado {
+  /* Estructura de grid para logo y texto */
   background-color: var(--color-1);
   display: grid;
   grid-template-columns: auto 1fr;
@@ -24,11 +26,13 @@ body {
   box-sizing: border-box;
 }
 
+/* Logo */
 .Encabezado img {
   width: 350px;
   height: auto;
 }
 
+/* Contenedor de título y subtítulo */
 .Encabezado h1,
 .Encabezado p {
   grid-column: 2;
@@ -38,17 +42,18 @@ body {
   color: var(--color-5);
 }
 
+/* Título principal */
 .Encabezado h1 {
   font-size: 5rem;
   margin-bottom: 1rem;
   font-family: "Michroma", sans-serif;
 }
 
+/* Subtítulo / descripción */
 .Encabezado p {
   font-size: 2rem;
   font-family: "Asimovian", sans-serif;
 }
-
 
 /* =========================================
    DIVISORES
@@ -57,15 +62,15 @@ body {
   margin: 0;
 }
 
+/* Estilo general para <hr> */
 hr {
   height: 5px;
   border: none;
   background-color: var(--color-2);
 }
 
-
 /* =========================================
-   MAIN
+   MAIN / CONTENEDORES PRINCIPALES
    ========================================= */
 main {
   background-color: var(--color-3);
@@ -81,10 +86,10 @@ main {
   box-sizing: border-box;
 }
 
+/* Margen interno para hr dentro de contenedores */
 .Contenedor hr {
   margin: 15px;
 }
-
 
 /* =========================================
    FOOTER
@@ -98,34 +103,41 @@ main {
   place-items: center;
 }
 
-
 /* =========================================
    TIPOGRAFÍA GENERAL
    ========================================= */
+/* Encabezados secundarios */
 h2 {
   font-size: 35px;
   font-family: "Michroma", sans-serif;
 }
 
+/* Fieldsets para formularios */
 fieldset {
   font-size: 20px;
   text-align: left;
 }
 
+/* Legend de fieldsets */
 legend {
   font-size: 30px;
   font-family: "Asimovian", sans-serif;
 }
 
+/* Labels de formularios */
 label {
   font-family: "Tektur", sans-serif;
 }
 
+/* =========================================
+   BOTONES
+   ========================================= */
 .ContenedorBoton {
   display: grid;
   place-items: center;
 }
 
+/* Estilo base de botones */
 .boton {
   display: grid;
   margin: 20px;
@@ -138,15 +150,16 @@ label {
   padding: 16px 32px; 
   font-size: 1.2rem;
   justify-content: center;
+  transition: all 0.2s ease;
 }
 
+/* Efecto hover de botones */
 .boton:hover {
   color: white;
   background-color: var(--color-boton-hover);
   cursor: pointer;
   transform: translateY(-2px);
 }
-
 
 /* =========================================
    FORMULARIOS / PREGUNTAS
@@ -156,6 +169,7 @@ label {
   gap: 15px;
 }
 
+/* Tamaño de select dentro de preguntas */
 .preguntasEntrenador select {
   width: 190px;
 }

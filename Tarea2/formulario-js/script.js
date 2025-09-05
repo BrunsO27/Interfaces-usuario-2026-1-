@@ -1,5 +1,13 @@
+/**
+ * URL base de la PokeAPI
+ * @constant {string}
+ */
 const API = "https://pokeapi.co/api/v2";
 
+/**
+ * Lista de rivales Pokémon
+ * @type {string[]}
+ */
 const rivales = [
     "Blue",
     "Silver",
@@ -13,6 +21,11 @@ const rivales = [
     "Hop",
     "Nemona",
 ];
+
+/**
+ * Lista de equipos Pokémon
+ * @type {string[]}
+ */
 const teams = [
     "Team Rocket",
     "Team Magma",
@@ -24,7 +37,12 @@ const teams = [
     "Macro Cosmos",
     "Team Yell",
     "Team Star"
-]
+];
+
+/**
+ * Lista de roles dentro del mundo Pokémon
+ * @type {string[]}
+ */
 const roles = [
     "Entrenador Pokémon",
     "Maestro Pokémon",
@@ -37,16 +55,21 @@ const roles = [
     "Team Leader / Líder de Equipo",
     "Profesor Pokémon",
     "Explorador Pokémon"
-]
+];
 
+/**
+ * Referencias a los formularios en el DOM
+ */
 const formData = document.getElementById("data");
 const formPkm = document.getElementById("pokemon");
 
+/**
+ * Carga los tipos de Pokémon desde la API y los agrega al select correspondiente.
+ */
 async function cargarTiposPkm() {
     try {
         const response = await fetch(`${API}/type`);
         const data = await response.json();
-
         const select = document.getElementById("type");
 
         for (const tipo of data.results) {
@@ -63,16 +86,18 @@ async function cargarTiposPkm() {
             select.appendChild(option);
         }
     } catch (error) {
-        alert("Ocurrio en error:", error);
-        console.log("Ocurrio un error:", error);
+        alert("Ocurrió un error: " + error);
+        console.error("Error al cargar tipos:", error);
     }
 }
 
+/**
+ * Carga las regiones desde la API y las agrega al select correspondiente.
+ */
 async function cargarRegiones() {
     try {
         const response = await fetch(`${API}/region`);
         const data = await response.json();
-
         const select = document.getElementById("region");
 
         for (const region of data.results) {
@@ -83,22 +108,23 @@ async function cargarRegiones() {
             select.appendChild(option);
         }
     } catch (error) {
-        alert("Ocurrio en error:", error);
-        console.log("Ocurrio un error:", error);
+        alert("Ocurrió un error: " + error);
+        console.error("Error al cargar regiones:", error);
     }
 }
 
+/**
+ * Carga los juegos Pokémon desde la API y los agrega al select correspondiente.
+ */
 async function cargarJuegos() {
     try {
         const response = await fetch(`${API}/version`);
         const data = await response.json();
-
         const select = document.getElementById("game");
 
         for (const version of data.results) {
             const res = await (await fetch(version.url)).json();
-
-            const nombreEs = res.names.find(n => n.language.name == "es").name;
+            const nombreEs = res.names.find(n => n.language.name === "es").name;
 
             const option = document.createElement("option");
             option.value = nombreEs;
@@ -106,35 +132,42 @@ async function cargarJuegos() {
             select.appendChild(option)
         }
     } catch (error) {
-        alert("Ocurrio en error " + error);
-        console.log("Ocurrio un error:", error);
+        alert("Ocurrió un error: " + error);
+        console.error("Error al cargar juegos:", error);
     }
 }
 
+/**
+ * Carga los rivales en el select correspondiente.
+ */
 function cargarRivales() {
     const select = document.getElementById("rival");
 
     for (const rival of rivales) {
         const option = document.createElement("option");
-
         option.value = rival.charAt(0).toLowerCase() + rival.slice(1);
         option.textContent = rival;
         select.appendChild(option);
     }
 }
 
+/**
+ * Carga los equipos en el select correspondiente.
+ */
 function cargarTeams() {
     const select = document.getElementById("team");
 
     for (const team of teams) {
         const option = document.createElement("option");
-
-        option.value = team.toLowerCase().replace(/\s+/g, "-");;
+        option.value = team.toLowerCase().replace(/\s+/g, "-");
         option.textContent = team;
         select.appendChild(option);
     }
 }
 
+/**
+ * Carga los roles en el select correspondiente.
+ */
 function cargarRoles() {
     const select = document.getElementById("rol");
 
@@ -146,10 +179,15 @@ function cargarRoles() {
     }
 }
 
+/**
+ * Valida los formularios de datos personales y Pokémon.
+ * @returns {boolean} true si los formularios son válidos, false en caso contrario.
+ */
 function validarForms() {
     let valido = true;
     let mensajes = [];
 
+    // Validar inputs de texto
     const inputsText = formData.querySelectorAll("input[type='text'], input[type='email'], input[type='tel'], input[type='date']");
     inputsText.forEach(input => {
         if (!input.value.trim()) {
@@ -158,6 +196,7 @@ function validarForms() {
         }
     });
 
+    // Validar selects
     const selects = formPkm.querySelectorAll("select");
     selects.forEach(select => {
         if (!select.value) {
@@ -166,8 +205,12 @@ function validarForms() {
         }
     });
 
-    
-    const radiosGroups = ["¿Qué prefieres hacer con tus Pokémon?", "¿Intercambias tus Pokémon?", "¿Participas en combates?"];
+    // Validar grupos de radios
+    const radiosGroups = [
+        "¿Qué prefieres hacer con tus Pokémon?",
+        "¿Intercambias tus Pokémon?",
+        "¿Participas en combates?"
+    ];
     radiosGroups.forEach(name => {
         const checkedRadio = formPkm.querySelector(`input[name='${name}']:checked`);
         if (!checkedRadio) {
@@ -183,6 +226,10 @@ function validarForms() {
     return valido;
 }
 
+/**
+ * Cambia el fondo principal según el tipo de Pokémon seleccionado.
+ * @param {string} tipo - El tipo de Pokémon seleccionado.
+ */
 function cambiarFondo(tipo) {
     const main = document.querySelector("main");
     
@@ -216,6 +263,9 @@ function cambiarFondo(tipo) {
     }
 }
 
+/**
+ * Guarda los datos del formulario si son válidos.
+ */
 function guardarForm() {
     if (validarForms()) {
         alert("Guardando datos...");
@@ -237,12 +287,17 @@ function guardarForm() {
             exchange: document.querySelector("input[name='¿Intercambias tus Pokémon?']:checked").value,
             duel: document.querySelector("input[name='¿Participas en combates?']:checked").value
         };
+
         console.log(datos);
     }
 }
 
+/**
+ * Inicializa los eventos y carga los selects al cargar la página.
+ */
 window.addEventListener("DOMContentLoaded", () => {
     document.getElementById("save").addEventListener("click", guardarForm);
+    
     cargarTiposPkm();
     cargarRegiones();
     cargarJuegos();
