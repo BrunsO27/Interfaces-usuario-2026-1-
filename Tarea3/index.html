@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Registro de Mascotas </title>
+        <script src="app.js"></script>
+        <link rel="stylesheet" href="./colores.css">
+        <link rel="stylesheet" href="./estilos.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Asimovian&family=Dancing+Script:wght@400..700&family=Michroma&family=Tektur:wght@400..900&display=swap"
+            rel="stylesheet">
+
+    </head>
+    <body>
+        <header class="Encabezado">
+            <h1> Formulario de Registro </h1>
+        </header>
+
+        <main>
+            <form id="registro" class="Formulario">
+                <h3> Informacion de tu mascota </h3>
+
+                <fieldset>
+                    <legend> Llena los siguientes campos </legend>
+
+                    <label for="nombre"> Nombre: </label>
+                    <input type="text" name="nombre" id="nombre">
+
+                    <label for="edad"> Edad: </label>
+                    <input type="number" name="edad" id="edad">
+
+                    <label for="especie"> Especie: </label>
+                    <select name="especie" id="especie">
+                        <option value="null"> Selecciona una especie </option>
+                    </select>
+
+                    <div id="radioGroup">
+                        <p> ¿Está vacunado? </p>
+                        <label> <input type="radio" name="vacunado" value="si">
+                            Sí </label>
+                        <label> <input type="radio" name="vacunado" value="no">
+                            No </label>
+                    </div>
+
+                    <label for="descripcion"> Descripción: </label>
+                    <textarea name="descripcion" id="descripcion"></textarea>
+
+                    <div id="ContenedorBoton">
+                        <button type="button" id="registrar"> REGISTRAR
+                        </button>
+                    </div>
+
+                </fieldset>
+
+            </form>
+
+            <hr>
+
+            <div id="tarjetas">
+                <h3> Mascotas Resgistradas </h3>
+                <p>Número de mascotas registradas: <span
+                        id="numMascotas">0</span></p>
+                <section id="tarjetero" class="Tarjetero">
+                </section>
+            </div>
+        </main>
+
+        <footer class="PiePagina">
+            <p> Diseño de Interfaces de Usuario </p>
+            <p> Tarea 3 | JavaScript avanzado </p>
+            <p> Ortiz Amaya Bruno Fernando </p>
+            <p> Facultad de Ciencias </p>
+            <p> Universidad Nacional Autónoma de México </p>
+        </footer>
+    </body>
+</html>

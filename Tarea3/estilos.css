@@ -1,0 +1,209 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--color5);
+}
+
+.Encabezado {
+    font-family: "Dancing Script", cursive;
+    font-size: 2.5rem;
+    background-color: var(--color1);
+    color: var(--color5);
+    text-align: center;
+    width: 100vw;
+    position: relative;
+    margin-left: calc(-50vw + 50%);
+    padding: 2em 0;
+    box-sizing: border-box;
+}
+
+.PiePagina {
+    width: 100%;
+    background-color: var(--color1);
+    color: var(--color5);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+    text-align: center;
+    padding: 1em 0;
+}
+
+/* Elimina el scroll de #tarjetas */
+#tarjetas {
+    background-color: var(--color5);
+    padding: 1em;
+    border-radius: 1em;
+    /* Quita max-height y overflow-y aquí */
+}
+
+#tarjetas p {
+    font-size: 1.5rem;
+}
+
+/* Aplica el scroll y grid al tarjetero */
+#tarjetero {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    /* Máximo 6 columnas por fila */
+    gap: 2rem;
+    padding: 2rem 0 12em 0;
+    justify-content: center;
+    max-height: 60vh;
+    /* Ajusta según tu diseño */
+    overflow-y: auto;
+    margin-left: 1rem;
+}
+
+.Tarjetero {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    /* Máximo 6 columnas por fila */
+    gap: 2rem;
+    padding: 2rem 0 12em 0;
+    justify-content: center;
+    overflow-y: auto;
+}
+
+#tarjetas h3 {
+    font-size: 2rem;
+}
+
+.Formulario {
+    margin: 1rem;
+}
+
+.Formulario fieldset,
+.Formulario fieldset legend {
+    margin-bottom: 1em;
+    font-size: 1.6rem;
+    /* Ajusta el valor según lo que necesites */
+}
+
+.Formulario h3 {
+    font-size: 2rem;
+}
+
+.Formulario fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    /* Espacio entre campos */
+    border: none;
+    /* Opcional: quita el borde del fieldset */
+    padding: 0;
+}
+
+.Formulario label {
+    font-size: 1.5rem;
+}
+
+#ContenedorBoton {
+    display: grid;
+    place-items: center;
+    justify-items: center;
+}
+
+.Formulario button {
+    display: grid;
+    margin: 20px;
+    background-color: var(--color3);
+    align-items: center;
+    width: 120px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 16px 32px;
+    font-size: 1.2rem;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.Formulario button:hover {
+    color: white;
+    background-color: var(--color2);
+    cursor: pointer;
+    transform: translateY(-2px);
+}
+
+/* Inputs tipo texto */
+.Formulario input[type="text"],
+.Formulario input[type="number"],
+.Formulario select {
+    font-size: 1.3rem;
+    padding: 0.7em 1em;
+    border-radius: 0.5em;
+    border: 1px solid var(--color3);
+    width: 100%; /* Opcional: para que ocupen todo el ancho disponible */
+    box-sizing: border-box;
+    height: 2.8em
+}
+
+.Formulario textarea {
+    font-size: 1.3rem;
+    padding: 0.7em 1em;
+    border-radius: 0.5em;
+    border: 1px solid var(--color3);
+    width: 100%; /* Opcional: para que ocupen todo el ancho disponible */
+    box-sizing: border-box;
+    height: 5.6em
+}
+
+
+/* Inputs tipo radio */
+.Formulario input[type="radio"] {
+    width: 1.5em;
+    height: 1.5em;
+    accent-color: var(--color3); /* Cambia el color del radio si el navegador lo soporta */
+    margin-right: 0.5em;
+}
+
+#radioGroup p {
+    font-size: 1.5rem;
+}
+
+/* 
+====================================
+Galería de tarjetas
+====================================
+*/
+
+/* 
+Tarjeta individual
+*/
+.tarjeta {
+    background-color: #fff;
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    overflow: hidden;
+    max-width: 320px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 35px;
+}
+
+/* Efecto hover para tarjetas */
+.tarjeta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagen dentro de la tarjeta */
+.tarjeta img {
+    width: 100%;
+    display: block;
+}
+
+/* Contenido textual dentro de la tarjeta */
+.contenido {
+    padding: 1rem;
+}
+
+.contenido h2 {
+    font-size: 2rem;
+}
+
+.contenido p {
+    font-size: 1.2rem;
+    text-align: start;
+    word-break: break-word;
+}
